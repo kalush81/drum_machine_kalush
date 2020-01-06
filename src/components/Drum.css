@@ -1,0 +1,11 @@
+.drum-machine-box {
+    display: flex;
+    border: 1px solid black;
+    width: 600px;
+    flex-wrap: wrap;
+}
+.drum-pad {
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+}
