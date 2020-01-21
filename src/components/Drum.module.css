@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Bangers&display=swap");
 
 @media (max-width: 700px) {
-    .DrumWrapper {
-        flex-direction: column;
-        max-width: 400px;
-    }
+  .DrumWrapper {
+    flex-direction: column;
+    max-width: 400px;
+  }
 }
 .DrumWrapper {
   position: relative;
@@ -33,14 +33,14 @@
     #ffff00,
     #ff0000
   );
-  background-size: 100%;
+  background-size: 800%;
   width: calc(100% + 10px);
   height: calc(100% + 10px);
   z-index: -1;
-  background-position: 323%;
-  animation: anim-moving-glow 20s linear infinite;
+  background-position: 100%;
+  animation: anim-moving-glow 80s linear infinite;
 }
-/* @keyframes anim-moving-glow {
+@keyframes anim-moving-glow {
   0% {
     background-position: 0 0;
   }
@@ -50,10 +50,13 @@
   100% {
     background-position: 0 0;
   }
-} */
+}
+.moving-glow:after {
+  filter: blur(30px);
+}
 
 .drumMachineBox {
-    margin: 0 auto;
+  margin: 0 auto;
   display: flex;
   border: 1px solid black;
   width: 326px;

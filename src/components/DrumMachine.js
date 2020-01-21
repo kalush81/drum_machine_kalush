@@ -141,8 +141,6 @@ export default class DrumMachine extends Component {
         return <button onClick={()=>this.playSong(this.state.arr)}>play</button>;
       }
     };
-    //console.log("bank", bank);
-    //console.log("isrecorded", this.state.isRecorded);
     return (
       <Aux>
         <div className={[classes.DrumWrapper, "dupa"].join(" ")}>
