@@ -6,7 +6,7 @@ export default class VolumeBox extends Component {
   state = {
     clicked: false,
     volumeValue: null,
-    posX: 100
+    posX: 150
   };
 
   componentDidMount() {
@@ -36,6 +36,7 @@ export default class VolumeBox extends Component {
   render() {
     return (
       <div id="VolumeBox" className={classes.Volume} >
+        <h2>volume</h2>
         <Fader volumeValue={this.state.volumeValue} posX={this.state.posX}/>
       </div>
     );

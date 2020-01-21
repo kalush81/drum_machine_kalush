@@ -67,7 +67,7 @@ const bankOne = [
 
 export default class DrumMachine extends Component {
   state = {
-    volume: 0.5,
+    volume: 0.75,
     whatIsClicked: "what is clicked",
     off: true,
     isRecorded: false,
