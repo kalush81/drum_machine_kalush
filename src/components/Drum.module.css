@@ -58,7 +58,6 @@
 .drumMachineBox {
   margin: 0 auto;
   display: flex;
-  border: 1px solid black;
   width: 326px;
   height: 326px;
   flex-wrap: wrap;
@@ -93,16 +92,18 @@
 }
 .Fader {
   position: relative;
-  width: 20px;
-  top: -10px;
-  border-radius: 3px;
+  width: 10px;
+  top: -13px;
+  border-radius: 6px;
   border-style: inset;
   border-left: 3px inset;
   height: calc(100% + 20px);
   background: greenyellow;
   cursor: pointer;
 }
-
+.Fader:hover {
+    background: darkolivegreen;
+} 
 .Info {
   font-family: "Bangers";
   display: inline-block;
