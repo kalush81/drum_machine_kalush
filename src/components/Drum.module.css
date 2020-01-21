@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css?family=Bangers&display=swap");
+
+.DrumWrapper {
+  position: relative;
+  display: flex;
+  width: 700px;
+  justify-content: space-around;
+  /* border: 4px solid slateblue; */
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.DrumWrapper:before,
+.DrumWrapper:after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(
+    45deg,
+    #fb0094,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #ff0000,
+    #fb0094,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #ff0000
+  );
+  background-size: 100%;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  z-index: -1;
+  background-position: 323%;
+  animation: anim-moving-glow 20s linear infinite;
+}
+/* @keyframes anim-moving-glow {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+} */
+
+.drumMachineBox {
+  display: flex;
+  border: 1px solid black;
+  width: 326px;
+  height: 326px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.drumPad {
+  font-family: "Bangers";
+  letter-spacing: 2px;
+  width: 100px;
+  height: 100px;
+  background-color: thistle;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  /* transition: background 1s ease-out, color 0.5s ease-in, transform 1s ease-in; */
+}
+.Volume {
+  margin: 20px auto;
+  width: 200px;
+  height: 10px;
+  border: 1px solid brown;
+  text-align: center;
+}
+.Fader {
+  position: relative;
+  width: 20px;
+  top: -10px;
+  border-radius: 3px;
+  height: calc(100% + 20px);
+  background: greenyellow;
+  cursor: pointer;
+}
+
+.Info {
+  font-family: "Bangers";
+  display: inline-block;
+  width: 200px;
+  height: 60px;
+  background: greenyellow;
+}
+.Switch,
+.Pitch {
+  margin: 20px auto;
+  width: 70px;
+  height: 50px;
+  border: 1px solid springgreen;
+}
+.Switch::before {
+  content: "off";
+}
+.Pitch::before {
+  content: "on";
+}
+.DrumControlers {
+  width: 300px;
+  height: auto;
+  border: 1px solid sienna;
+}
+.dupa {
+  border: 4px solid darkorange;
+}
+/* .MovingGlow:before,
+.MovingGlow:after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(
+    45deg,
+    #fb0094,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #ff0000,
+    #fb0094,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #ff0000
+  );
+  background-size: 400%;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  z-index: -1;
+  animation: anim-moving-glow 20s linear infinite;
+}
+@keyframes anim-moving-glow {
+      0% {
+          background-position: 0 0;
+      }
+      50% {
+          background-position: 400% 0;
+      }
+      100% {
+          background-position: 0 0;
+      }
+  }
+  .MovingGlow:after {
+        filter: blur(30px);
+    } */

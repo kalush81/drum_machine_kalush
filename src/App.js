@@ -1,14 +1,19 @@
-import React from 'react';
-import DrumMachine from './components/DrumMachine';
-import './App.css';
+import React from "react";
+import DrumMachine from "./components/DrumMachine";
+//import VolumeBox from "./components/VolumeBox";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Drum Machine</h1>
-      <DrumMachine />
-    </div>
-  );
+class App extends React.Component {
+  
+  render() {
+    return (
+      <div className="App">
+        <h1>Drum Machine</h1>
+        <DrumMachine />
+        {/* <VolumeBox /> */}
+      </div>
+    );
+  }
 }
 
 export default App;
