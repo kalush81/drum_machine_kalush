@@ -66,19 +66,23 @@ const bankOne = [
 ];
 
 export default class DrumMachine extends Component {
+  constructor(props) {
+    super(props)
+    this.timing = [];
+  }
   state = {
     volume: 0.75,
     whatIsClicked: "what is clicked",
     off: true,
     isRecorded: false,
-    arr: []
+    arr: [],
+    test: false
   };
   playMusic = param => {
     const url = bankOne.find(el => el.id === param).url;
-    console.log(url);
     const audio = document.createElement("audio");
+    //audio.loop =  true;
     audio.src = url;
-    //audio.loop = true;
     audio.play();
   };
   setLoudness = volume => {
@@ -109,8 +113,11 @@ export default class DrumMachine extends Component {
       });
     }
   };
+
   playSong = arr => {
-    const newArr = arr.reduce(
+    let newArr = [];
+    console.log('play btn clicked', newArr)
+    newArr = arr.reduce(
       (accumulator, current, idx) => {
         if (idx > 0) {
           let time = current.time - accumulator[0].time;
@@ -120,15 +127,21 @@ export default class DrumMachine extends Component {
       },
       [arr[0]]
     );
-    //console.log(newArr);
+
     newArr[0] = { id: newArr[0].id, time: 0 };
-    console.log(newArr);
-    newArr.map(el => {
-      setTimeout(() => {
-        //console.log(el.id);
+    if (this.timing.length > 0) {
+      this.timing.forEach(i => clearTimeout(i))
+      console.log(this.timing)
+      //this.setState({test: true})
+      //return 
+    }
+    console.log(this.timing)
+    this.timing = newArr.map(el => {
+      return setTimeout(() => {
         this.playMusic(el.id);
       }, el.time);
     });
+    console.log(this.timing)
   };
   render() {
     let bank = [];
