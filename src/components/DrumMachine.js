@@ -78,6 +78,7 @@ export default class DrumMachine extends Component {
     console.log(url);
     const audio = document.createElement('audio');
     audio.src = url;
+    audio.loop = true;
     audio.play()
   }
   setLoudness = volume => {
@@ -166,10 +167,10 @@ export default class DrumMachine extends Component {
               info={this.state.whatIsClicked}
             />
             <VolumeBox setLoudness={volume => this.setLoudness(volume)} />
-            <RecBtn
+            {!this.state.off && <RecBtn
               clicked={this.handleRecordClick}
               isRec={this.state.isRecorded}
-            />
+            />}
             {playBtn()}
           </div>
         </div>

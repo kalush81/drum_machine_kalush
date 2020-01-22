@@ -14,7 +14,7 @@
   display: flex;
   width: 700px;
   justify-content: space-around;
-  /* border: 4px solid slateblue; */
+  border: 8px inset rgba(0, 0, 0, 0.15);
   background-color: rgba(0, 0, 0, 0.15);
 }
 .DrumWrapper:before,
