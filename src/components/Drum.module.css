@@ -3,7 +3,7 @@
 @media (max-width: 700px) {
   .DrumWrapper {
     flex-direction: column;
-    max-width: 400px;
+    max-width: 90%;
   }
 }
 .DrumWrapper {
@@ -78,7 +78,7 @@
   /* transition: background 1s ease-out, color 0.5s ease-in, transform 1s ease-in; */
 }
 .Volume {
-  position: relative;  
+  position: relative;
   margin: 20px auto;
   width: 200px;
   height: 10px;
@@ -88,10 +88,10 @@
   background: rgba(0, 0, 0, 0.5);
 }
 .Volume h2 {
-    color: white;
-    position: absolute;
-    font-size: 10px;
-    top: -10px
+  color: white;
+  position: absolute;
+  font-size: 10px;
+  top: -10px;
 }
 .Fader {
   position: relative;
@@ -105,8 +105,8 @@
   cursor: pointer;
 }
 .Fader:hover {
-    background: darkolivegreen;
-} 
+  background: darkolivegreen;
+}
 .Info {
   font-family: "Bangers";
   display: inline-block;
@@ -114,26 +114,74 @@
   height: 60px;
   background: greenyellow;
 }
-.Switch,
-.Pitch {
-  margin: 20px auto;
-  width: 70px;
-  height: 50px;
-  border: 1px solid springgreen;
+.Switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 15px;
 }
-.Switch::before {
-  content: "off";
+
+.Switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
-.Pitch::before {
-  content: "on";
+
+.Slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.Slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 1px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .Slider {
+  background-color: #2196f3;
+}
+
+input:focus + .Slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .Slider:before {
+  transform: translateX(13px);
 }
 .DrumControlers {
   width: 300px;
   height: auto;
   margin: auto;
 }
-.dupa {
+/* .dupa {
   border: 4px solid darkorange;
+} */
+.RecBtn {
+    position: absolute;
+    display: block;
+    width: 100px;
+    height: 30px;
+    background: red;
+}
+.PlayBtn {
+    position: absolute;
+    left: 200px;
+    display: block;
+    width: 100px;
+    height: 30px;
+    background: red;
 }
 /* .MovingGlow:before,
 .MovingGlow:after {

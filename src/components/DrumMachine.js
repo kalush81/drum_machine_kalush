@@ -78,7 +78,7 @@ export default class DrumMachine extends Component {
     console.log(url);
     const audio = document.createElement('audio');
     audio.src = url;
-    audio.loop = true;
+    //audio.loop = true;
     audio.play()
   }
   setLoudness = volume => {
@@ -139,7 +139,7 @@ export default class DrumMachine extends Component {
     }
     const playBtn = () => {
       if (this.state.arr.length > 0 && !this.state.isRecorded) {
-        return <button onClick={()=>this.playSong(this.state.arr)}>play</button>;
+        return <button className={classes.PlayBtn} onClick={()=>this.playSong(this.state.arr)}>play</button>;
       }
     };
     return (
