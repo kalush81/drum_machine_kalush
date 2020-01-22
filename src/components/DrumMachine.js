@@ -73,14 +73,14 @@ export default class DrumMachine extends Component {
     isRecorded: false,
     arr: []
   };
-  playMusic = (param) => {
-    const url = (bankOne.find(el => el.id === param)).url;
+  playMusic = param => {
+    const url = bankOne.find(el => el.id === param).url;
     console.log(url);
-    const audio = document.createElement('audio');
+    const audio = document.createElement("audio");
     audio.src = url;
     //audio.loop = true;
-    audio.play()
-  }
+    audio.play();
+  };
   setLoudness = volume => {
     if (volume > 1 || volume < 0) return;
     this.setState({
@@ -109,7 +109,7 @@ export default class DrumMachine extends Component {
       });
     }
   };
-  playSong = (arr) => {
+  playSong = arr => {
     const newArr = arr.reduce(
       (accumulator, current, idx) => {
         if (idx > 0) {
@@ -121,12 +121,12 @@ export default class DrumMachine extends Component {
       [arr[0]]
     );
     //console.log(newArr);
-    newArr[0] = {id: newArr[0].id, time: 0};
-    console.log(newArr)
+    newArr[0] = { id: newArr[0].id, time: 0 };
+    console.log(newArr);
     newArr.map(el => {
       setTimeout(() => {
         //console.log(el.id);
-        this.playMusic(el.id)
+        this.playMusic(el.id);
       }, el.time);
     });
   };
@@ -139,7 +139,14 @@ export default class DrumMachine extends Component {
     }
     const playBtn = () => {
       if (this.state.arr.length > 0 && !this.state.isRecorded) {
-        return <button className={classes.PlayBtn} onClick={()=>this.playSong(this.state.arr)}>play</button>;
+        return (
+          <button
+            className={classes.PlayBtn}
+            onClick={() => this.playSong(this.state.arr)}
+          >
+            play
+          </button>
+        );
       }
     };
     return (
@@ -167,11 +174,15 @@ export default class DrumMachine extends Component {
               info={this.state.whatIsClicked}
             />
             <VolumeBox setLoudness={volume => this.setLoudness(volume)} />
-            {!this.state.off && <RecBtn
-              clicked={this.handleRecordClick}
-              isRec={this.state.isRecorded}
-            />}
-            {playBtn()}
+            <div className={classes.RecPlayBtnWrapper}>
+              {!this.state.off && (
+                <RecBtn
+                  clicked={this.handleRecordClick}
+                  isRec={this.state.isRecorded}
+                />
+              )}
+              {playBtn()}
+            </div>
           </div>
         </div>
       </Aux>

@@ -168,20 +168,22 @@ input:checked + .Slider:before {
 /* .dupa {
   border: 4px solid darkorange;
 } */
-.RecBtn {
-    position: absolute;
-    display: block;
+.RecBtn, .PlayBtn {
+    /* position: absolute;
+    display: block; */
     width: 100px;
     height: 30px;
     background: red;
 }
-.PlayBtn {
-    position: absolute;
-    left: 200px;
+/* .PlayBtn {
     display: block;
     width: 100px;
     height: 30px;
     background: red;
+} */
+.RecPlayBtnWrapper {
+    display: flex;
+    justify-content: space-between;
 }
 /* .MovingGlow:before,
 .MovingGlow:after {
